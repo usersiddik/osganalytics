@@ -138,14 +138,14 @@ export default function App() {
             <div className="hidden lg:flex space-x-8 text-[16px] font-medium text-[#1a1a1a]">
               <a href="#industries" className="hover:text-[#058ae5] transition-colors">Industries</a>
               <a href="#services" className="hover:text-[#058ae5] transition-colors">Capabilities</a>
-              <a href="#outcomes" className="hover:text-[#058ae5] transition-colors">Work</a>
+              <a href="#outcomes" className="hover:text-[#058ae5] transition-colors">Case Studies</a>
               <a href="#process" className="hover:text-[#058ae5] transition-colors">Process</a>
               <a href="#insights" className="hover:text-[#058ae5] transition-colors">Insights</a>
               <a href="#about" className="hover:text-[#058ae5] transition-colors">About</a>
             </div>
             
             <GradientButton href="#contact" className="hidden lg:inline-flex">
-              Talk to Our Team
+              Request a Capabilities Overview
             </GradientButton>
 
             <button className="lg:hidden text-[#1a1a1a]" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
@@ -158,12 +158,12 @@ export default function App() {
           <div className="lg:hidden absolute top-20 left-0 w-full bg-white border-b border-[#e5e5e8] shadow-lg flex flex-col p-6 gap-5">
             <a href="#industries" onClick={() => setIsMobileMenuOpen(false)} className="text-[18px] font-medium text-[#1a1a1a] hover:text-[#058ae5]">Industries</a>
             <a href="#services" onClick={() => setIsMobileMenuOpen(false)} className="text-[18px] font-medium text-[#1a1a1a] hover:text-[#058ae5]">Capabilities</a>
-            <a href="#outcomes" onClick={() => setIsMobileMenuOpen(false)} className="text-[18px] font-medium text-[#1a1a1a] hover:text-[#058ae5]">Work</a>
+            <a href="#outcomes" onClick={() => setIsMobileMenuOpen(false)} className="text-[18px] font-medium text-[#1a1a1a] hover:text-[#058ae5]">Case Studies</a>
             <a href="#process" onClick={() => setIsMobileMenuOpen(false)} className="text-[18px] font-medium text-[#1a1a1a] hover:text-[#058ae5]">Process</a>
             <a href="#insights" onClick={() => setIsMobileMenuOpen(false)} className="text-[18px] font-medium text-[#1a1a1a] hover:text-[#058ae5]">Insights</a>
             <a href="#about" onClick={() => setIsMobileMenuOpen(false)} className="text-[18px] font-medium text-[#1a1a1a] hover:text-[#058ae5]">About</a>
             <GradientButton href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="w-full mt-2">
-              Talk to Our Team
+              Request a Capabilities Overview
             </GradientButton>
           </div>
         )}
@@ -172,7 +172,7 @@ export default function App() {
       <main className="w-full flex flex-col">
 
         {/* SECTION 1: HERO */}
-        <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden bg-white">
+        <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden bg-white border-b border-[#e5e5e8]">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1200px] h-[600px] bg-gradient-to-b from-[#058ae5]/5 to-transparent pointer-events-none" />
           
           <div className="px-5 md:px-10 lg:px-20 relative z-10 w-full">
@@ -242,7 +242,7 @@ export default function App() {
         </section>
 
         {/* SECTION 2: WHO WE HELP */}
-        <section id="industries" className="py-20 md:py-28 bg-[#f8f9fa]">
+        <section id="industries" className="py-20 md:py-28 bg-[#f8f9fa] border-b border-[#e5e5e8]">
           <div className="px-5 md:px-10 lg:px-20 w-full">
             <div className="max-w-[1200px] mx-auto flex flex-col items-center">
               
@@ -304,7 +304,7 @@ export default function App() {
         </section>
 
         {/* SECTION 3: WHAT WE DO */}
-        <section id="services" className="py-20 md:py-28 bg-white border-y border-[#e5e5e8]">
+        <section id="services" className="py-20 md:py-28 bg-white border-b border-[#e5e5e8]">
           <div className="px-5 md:px-10 lg:px-20 w-full">
             <div className="max-w-[1200px] mx-auto flex flex-col items-center">
               
@@ -349,7 +349,7 @@ export default function App() {
         </section>
 
         {/* SECTION 4: WHY OSG */}
-        <section className="py-20 md:py-28 bg-[#f8f9fa]">
+        <section className="py-20 md:py-28 bg-[#f8f9fa] border-b border-[#e5e5e8]">
           <div className="px-5 md:px-10 lg:px-20 w-full">
             <div className="max-w-[1200px] mx-auto">
               
@@ -426,23 +426,22 @@ export default function App() {
           </div>
         </section>
 
-        {/* SECTION 5: SELECTED OUTCOMES */}
-        <section id="outcomes" className="py-20 md:py-28 bg-[#f8f9fa] border-y border-[#e5e5e8]">
+        {/* SECTION 5: SELECTED OUTCOMES (Case Studies) */}
+        <section id="outcomes" className="py-20 md:py-28 bg-white border-b border-[#e5e5e8]">
           <div className="px-5 md:px-10 lg:px-20 w-full">
             <div className="max-w-[1200px] mx-auto">
               
               <FadeInUp className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
                 <div className="max-w-2xl text-left">
-                  <span className="inline-block px-3 py-1 bg-[#058ae5]/10 text-[#058ae5] text-xs font-bold uppercase tracking-widest rounded-full mb-4">Case Studies</span>
                   <h2 className="text-3xl md:text-4xl lg:text-[40px] font-poppins font-bold tracking-tight mb-4 text-[#1a1a1a]">
-                    Selected Outcomes
+                    Case Studies
                   </h2>
                   <p className="text-lg text-[#1a1a1a]/70 font-barlow">
                     A few examples of how analytics and strategy work together in practice.
                   </p>
                 </div>
                 <GradientButton href="#outcomes" className="shrink-0">
-                  See Selected Work <ArrowRight className="w-4 h-4"/>
+                  View More <ArrowRight className="w-4 h-4"/>
                 </GradientButton>
               </FadeInUp>
 
@@ -501,7 +500,7 @@ export default function App() {
         </section>
 
         {/* SECTION 6: HOW OSG WORKS */}
-        <section id="process" className="py-20 md:py-28 bg-[#f8f9fa] relative">
+        <section id="process" className="py-20 md:py-28 bg-[#f8f9fa] relative border-b border-[#e5e5e8]">
           <div className="px-5 md:px-10 lg:px-20 w-full h-full">
             <div className="max-w-[1200px] mx-auto">
               
@@ -544,7 +543,7 @@ export default function App() {
         </section>
 
         {/* SECTION 7: INSIGHTS */}
-        <section id="insights" className="py-20 md:py-28 bg-white border-y border-[#e5e5e8]">
+        <section id="insights" className="py-20 md:py-28 bg-white border-b border-[#e5e5e8]">
           <div className="px-5 md:px-10 lg:px-20 w-full">
             <div className="max-w-[1200px] mx-auto">
               
@@ -633,10 +632,6 @@ export default function App() {
                 <li className="flex items-center justify-center gap-2"><CheckCircle2 className="w-5 h-5 text-[#058ae5]"/> Multidisciplinary teams spanning analytics, research, and strategy</li>
                 <li className="flex items-center justify-center gap-2"><CheckCircle2 className="w-5 h-5 text-[#058ae5]"/> Engagement models tailored to specific decisions and timelines</li>
               </ul>
-              
-              <GradientButton href="#about">
-                Learn About OSG
-              </GradientButton>
             </FadeInUp>
           </div>
         </section>
@@ -657,11 +652,8 @@ export default function App() {
               
               <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
                 <GradientButton href="#contact" darkBg={true}>
-                  Talk to Our Team
-                </GradientButton>
-                <button className="bg-transparent border-2 border-white/30 text-white px-8 py-3 rounded-[4px] text-[16px] font-bold hover:bg-white/10 hover:border-white transition-all w-full sm:w-auto">
                   Request a Capabilities Overview
-                </button>
+                </GradientButton>
               </div>
             </FadeInUp>
 
