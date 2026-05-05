@@ -64,7 +64,7 @@ const FadeInUp = ({ children, delay = '0ms', className = '' }) => {
 };
 
 // --- CUSTOM GRADIENT BUTTON COMPONENT ---
-const GradientButton = ({ href, children, onClick, className = '' }) => {
+const GradientButton = ({ href, children, darkBg = false, onClick, className = '' }) => {
   const Component = href ? 'a' : 'button';
   
   return (
@@ -175,7 +175,8 @@ export default function App() {
             <div className="max-w-[1200px] mx-auto flex flex-col items-center text-center">
               
               <FadeInUp className="max-w-4xl flex flex-col items-center">
-                <h1 className="text-4xl md:text-5xl lg:text-[64px] font-poppins font-extrabold tracking-tight leading-[1.6] mb-6 text-[#1a1a1a]">
+                {/* Hero H1 - Adjusted line height to 1.2 */}
+                <h1 className="text-4xl md:text-5xl lg:text-[64px] font-poppins font-extrabold tracking-tight leading-[1.2] md:leading-[1.2] lg:leading-[1.2] mb-6 text-[#1a1a1a]">
                   Data Analytics & Strategy for <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#340a54] via-[#058ae5] to-[#02ce6b]">Better Commercial Decisions</span>
                 </h1>
                 <p className="text-[18px] md:text-[22px] text-[#1a1a1a]/80 max-w-3xl mb-10 leading-relaxed font-barlow">
@@ -199,7 +200,8 @@ export default function App() {
                     >
                       <img src={bullet.img} className="w-full h-full object-cover opacity-60" alt="OSG Insight" />
                       <div className="absolute inset-0 bg-[#1a1a1a]/40 flex items-center justify-center px-8 sm:px-16">
-                        <p className="text-white text-[24px] md:text-[32px] lg:text-[38px] font-poppins font-bold text-center max-w-3xl leading-[1.6] shadow-sm drop-shadow-md">
+                        {/* H3/Slider Title - Tightened to 1.3 */}
+                        <p className="text-white text-[24px] md:text-[32px] lg:text-[38px] font-poppins font-bold text-center max-w-3xl leading-[1.3] md:leading-[1.3] lg:leading-[1.3] shadow-sm drop-shadow-md">
                           {bullet.text}
                         </p>
                       </div>
@@ -244,7 +246,8 @@ export default function App() {
               
               <FadeInUp className="flex flex-col md:flex-row justify-between items-start md:items-end w-full mb-16 gap-6">
                 <div className="max-w-2xl text-left">
-                  <h2 className="text-3xl md:text-4xl lg:text-[42px] font-poppins font-bold tracking-tight leading-[1.6] mb-6 text-[#1a1a1a]">
+                  {/* H2 Title - Fixed to specific explicit REM values (3rem for tablet) */}
+                  <h2 className="text-3xl md:text-4xl lg:text-[42px] font-poppins font-bold tracking-tight leading-[2.5rem] md:leading-[3rem] lg:leading-[3.5rem] mb-4 text-[#1a1a1a]">
                     Built for Complex, <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] to-[#02ce6b]">Data-Rich Industries</span>
                   </h2>
                   <p className="text-[18px] md:text-[20px] text-[#1a1a1a]/70 font-barlow leading-relaxed">
@@ -287,7 +290,8 @@ export default function App() {
                         </div>
                       </div>
                       <div className="p-8 flex-1 flex flex-col bg-white z-20">
-                        <h3 className="text-[24px] md:text-[26px] font-poppins font-bold leading-[1.6] mb-4 text-[#1a1a1a]">{item.title}</h3>
+                        {/* H3 Title - Tightened to 1.3 */}
+                        <h3 className="text-[24px] md:text-[26px] font-poppins font-bold leading-[1.3] md:leading-[1.3] lg:leading-[1.3] mb-4 text-[#1a1a1a]">{item.title}</h3>
                         <p className="text-[16px] md:text-[18px] text-[#1a1a1a]/70 leading-relaxed font-barlow">{item.desc}</p>
                       </div>
                     </div>
@@ -305,7 +309,7 @@ export default function App() {
             <div className="max-w-[1200px] mx-auto flex flex-col items-center">
               
               <FadeInUp className="mb-16 text-center max-w-3xl mx-auto">
-                <h2 className="text-3xl md:text-4xl lg:text-[42px] font-poppins font-bold tracking-tight leading-[1.6] mb-6 text-[#1a1a1a]">
+                <h2 className="text-3xl md:text-4xl lg:text-[42px] font-poppins font-bold tracking-tight leading-[2.5rem] md:leading-[3rem] lg:leading-[3.5rem] mb-6 text-[#1a1a1a]">
                   Analytics and Strategy Services That Support Real Decisions
                 </h2>
                 <p className="text-[18px] md:text-[20px] text-[#1a1a1a]/70 font-barlow mb-8 leading-relaxed">
@@ -333,7 +337,7 @@ export default function App() {
                         </div>
                       </div>
 
-                      <h3 className="text-[22px] md:text-[24px] font-poppins font-bold leading-[1.6] mb-4 text-[#1a1a1a] group-hover:text-[#058ae5] transition-colors duration-300">{item.title}</h3>
+                      <h3 className="text-[22px] md:text-[24px] font-poppins font-bold leading-[1.3] md:leading-[1.3] lg:leading-[1.3] mb-4 text-[#1a1a1a] group-hover:text-[#058ae5] transition-colors duration-300">{item.title}</h3>
                       <p className="text-[16px] md:text-[18px] text-[#1a1a1a]/70 font-barlow leading-relaxed">{item.desc}</p>
                     </div>
                   </FadeInUp>
@@ -356,7 +360,7 @@ export default function App() {
             <div className="max-w-[1200px] mx-auto">
               
               <FadeInUp className="mb-16 max-w-2xl">
-                <h2 className="text-3xl md:text-4xl lg:text-[42px] font-poppins font-bold tracking-tight leading-[1.6] mb-8 text-[#1a1a1a]">
+                <h2 className="text-3xl md:text-4xl lg:text-[42px] font-poppins font-bold tracking-tight leading-[2.5rem] md:leading-[3rem] lg:leading-[3.5rem] mb-8 text-[#1a1a1a]">
                   Why Leadership Teams Choose OSG
                 </h2>
                 <p className="text-[18px] md:text-[20px] text-[#1a1a1a]/70 font-barlow leading-relaxed">
@@ -368,7 +372,7 @@ export default function App() {
                 <FadeInUp className="md:col-span-2 bg-white rounded-[16px] p-10 border border-[#e5e5e8] shadow-sm relative overflow-hidden group hover:shadow-md transition-shadow duration-300">
                   <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#340a54] to-[#058ae5]" />
                   <div className="relative z-10">
-                    <h3 className="text-[24px] md:text-[28px] font-poppins font-bold leading-[1.6] mb-4 relative group/heading">
+                    <h3 className="text-[24px] md:text-[28px] font-poppins font-bold leading-[1.3] md:leading-[1.3] lg:leading-[1.3] mb-4 relative group/heading">
                       <span className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] to-[#02ce6b] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out pointer-events-none aria-hidden">
                         Decision-Focused Analytics
                       </span>
@@ -388,7 +392,7 @@ export default function App() {
                 <FadeInUp delay="100ms" className="col-span-1 bg-white rounded-[16px] p-8 border border-[#e5e5e8] shadow-sm hover:shadow-md transition-shadow duration-300 relative overflow-hidden group">
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#058ae5] to-[#02ce6b]" />
                   <div className="relative z-10">
-                    <h3 className="text-[22px] md:text-[24px] font-poppins font-bold leading-[1.6] mb-4 relative group/heading">
+                    <h3 className="text-[22px] md:text-[24px] font-poppins font-bold leading-[1.3] md:leading-[1.3] lg:leading-[1.3] mb-4 relative group/heading">
                       <span className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] to-[#02ce6b] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out pointer-events-none aria-hidden">
                         Industry Depth
                       </span>
@@ -406,7 +410,7 @@ export default function App() {
                 <FadeInUp delay="200ms" className="col-span-1 bg-white rounded-[16px] p-8 border border-[#e5e5e8] shadow-sm hover:shadow-md transition-shadow duration-300 relative overflow-hidden group">
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#058ae5] to-[#02ce6b]" />
                   <div className="relative z-10">
-                    <h3 className="text-[22px] md:text-[24px] font-poppins font-bold leading-[1.6] mb-4 relative group/heading">
+                    <h3 className="text-[22px] md:text-[24px] font-poppins font-bold leading-[1.3] md:leading-[1.3] lg:leading-[1.3] mb-4 relative group/heading">
                       <span className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] to-[#02ce6b] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out pointer-events-none aria-hidden">
                         Proprietary Methods + Practical Delivery
                       </span>
@@ -425,7 +429,7 @@ export default function App() {
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#058ae5] to-[#02ce6b]" />
                   <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center gap-8">
                     <div>
-                      <h3 className="text-[24px] md:text-[28px] font-poppins font-bold leading-[1.6] mb-4 relative group/heading">
+                      <h3 className="text-[24px] md:text-[28px] font-poppins font-bold leading-[1.3] md:leading-[1.3] lg:leading-[1.3] mb-4 relative group/heading">
                         <span className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] to-[#02ce6b] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out pointer-events-none aria-hidden">
                           Secure, Enterprise-Ready Approach
                         </span>
@@ -465,8 +469,7 @@ export default function App() {
               
               <FadeInUp className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
                 <div className="max-w-2xl text-left">
-                  <span className="inline-block px-4 py-1.5 bg-[#058ae5]/10 text-[#058ae5] text-[14px] md:text-[15px] font-bold uppercase tracking-widest rounded-full mb-4">Case Studies</span>
-                  <h2 className="text-3xl md:text-4xl lg:text-[42px] font-poppins font-bold tracking-tight leading-[1.6] mb-6 text-[#1a1a1a]">
+                  <h2 className="text-3xl md:text-4xl lg:text-[42px] font-poppins font-bold tracking-tight leading-[2.5rem] md:leading-[3rem] lg:leading-[3.5rem] mb-6 text-[#1a1a1a]">
                     Case Studies
                   </h2>
                   <p className="text-[18px] md:text-[20px] text-[#1a1a1a]/70 font-barlow leading-relaxed">
@@ -513,7 +516,7 @@ export default function App() {
                       </div>
                       
                       {/* Permanent Gradient Text for Case Study Titles */}
-                      <h3 className="text-[22px] md:text-[24px] font-poppins font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] to-[#02ce6b] mb-6 leading-[1.6]">{item.client}</h3>
+                      <h3 className="text-[22px] md:text-[24px] font-poppins font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] to-[#02ce6b] mb-6 leading-[1.3] md:leading-[1.3] lg:leading-[1.3]">{item.client}</h3>
                       
                       <div className="text-[16px] md:text-[17px] text-[#1a1a1a]/80 font-barlow space-y-5 mb-10 flex-1">
                         <p><strong className="font-semibold text-[#1a1a1a] uppercase text-[14px] md:text-[15px] tracking-widest block mb-1">Challenge:</strong> <span className="leading-relaxed block">{item.challenge}</span></p>
@@ -542,7 +545,7 @@ export default function App() {
                 
                 <div className="lg:sticky lg:top-32 max-w-xl self-start">
                   <FadeInUp>
-                    <h2 className="text-3xl md:text-4xl lg:text-[42px] font-poppins font-bold tracking-tight leading-[1.6] mb-6 text-[#1a1a1a]">
+                    <h2 className="text-3xl md:text-4xl lg:text-[42px] font-poppins font-bold tracking-tight leading-[2.5rem] md:leading-[3rem] lg:leading-[3.5rem] mb-6 text-[#1a1a1a]">
                       A Clear Path from Data to <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] to-[#02ce6b]">Decision</span>
                     </h2>
                     <p className="text-[18px] md:text-[22px] text-[#1a1a1a]/70 font-barlow leading-relaxed">
@@ -568,7 +571,7 @@ export default function App() {
                       </div>
                       
                       <div className="bg-white border border-[#e5e5e8] rounded-xl p-8 md:p-10 hover:shadow-md transition-shadow duration-300 ml-2 md:ml-4">
-                        <h3 className="text-[20px] md:text-[24px] font-poppins font-bold leading-[1.6] mb-4 text-[#1a1a1a] group-hover:text-[#058ae5] transition-colors duration-300">{step.title}</h3>
+                        <h3 className="text-[20px] md:text-[24px] font-poppins font-bold leading-[1.3] md:leading-[1.3] lg:leading-[1.3] mb-4 text-[#1a1a1a] group-hover:text-[#058ae5] transition-colors duration-300">{step.title}</h3>
                         <p className="text-[16px] md:text-[18px] text-[#1a1a1a]/70 font-barlow leading-relaxed">{step.desc}</p>
                       </div>
                     </FadeInUp>
@@ -587,7 +590,7 @@ export default function App() {
             <div className="max-w-[1200px] mx-auto">
               
               <FadeInUp className="mb-12 flex flex-col items-start w-full">
-                <h2 className="text-3xl md:text-4xl lg:text-[42px] font-poppins font-bold tracking-tight leading-[1.6] mb-6 text-[#1a1a1a]">
+                <h2 className="text-3xl md:text-4xl lg:text-[42px] font-poppins font-bold tracking-tight leading-[2.5rem] md:leading-[3rem] lg:leading-[3.5rem] mb-6 text-[#1a1a1a]">
                   Insights for Analytics and Strategy Leaders
                 </h2>
                 <p className="text-[18px] md:text-[20px] text-[#1a1a1a]/70 font-barlow mb-12 max-w-2xl leading-relaxed">
@@ -636,7 +639,7 @@ export default function App() {
                         <span className="text-[14px] md:text-[15px] font-bold text-[#058ae5] uppercase tracking-widest mb-4 block">{article.tag}</span>
                         
                         {/* CSS Trick: Smooth transition from solid to gradient text */}
-                        <h3 className="text-[22px] md:text-[26px] font-poppins font-bold mb-4 relative group leading-[1.6]">
+                        <h3 className="text-[22px] md:text-[26px] font-poppins font-bold mb-4 relative group leading-[1.3] md:leading-[1.3] lg:leading-[1.3]">
                           <span className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] to-[#02ce6b] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out pointer-events-none aria-hidden">
                             {article.title}
                           </span>
@@ -669,7 +672,7 @@ export default function App() {
         <section id="about" className="py-20 md:py-28 bg-[#f8f9fa]">
           <div className="px-5 md:px-10 lg:px-20 w-full">
             <FadeInUp className="max-w-4xl mx-auto text-center flex flex-col items-center">
-              <h2 className="text-3xl md:text-4xl lg:text-[42px] font-poppins font-bold tracking-tight leading-[1.6] mb-8 text-[#1a1a1a]">
+              <h2 className="text-3xl md:text-4xl lg:text-[42px] font-poppins font-bold tracking-tight leading-[2.5rem] md:leading-[3rem] lg:leading-[3.5rem] mb-8 text-[#1a1a1a]">
                 About <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] to-[#02ce6b]">OSG</span>
               </h2>
               <p className="text-[18px] md:text-[22px] text-[#1a1a1a]/80 font-barlow leading-relaxed mb-12">
@@ -696,7 +699,7 @@ export default function App() {
           <div className="max-w-[1200px] mx-auto flex flex-col items-center text-center">
             
             <FadeInUp>
-              <h2 className="text-3xl md:text-4xl lg:text-[48px] font-poppins font-bold tracking-tight max-w-3xl leading-[1.6] mb-12">
+              <h2 className="text-3xl md:text-4xl lg:text-[48px] font-poppins font-bold tracking-tight max-w-3xl leading-[2.5rem] md:leading-[3rem] lg:leading-[4rem] mb-12">
                 Need an analytics and strategy partner for a high-stakes commercial decision?
               </h2>
               
