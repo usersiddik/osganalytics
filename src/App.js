@@ -64,20 +64,16 @@ const FadeInUp = ({ children, delay = '0ms', className = '' }) => {
 };
 
 // --- CUSTOM GRADIENT BUTTON COMPONENT ---
-const GradientButton = ({ href, children, darkBg = false, onClick, className = '' }) => {
-  const innerBgClass = darkBg ? 'bg-[#340a54]' : 'bg-white';
-  const textColorClass = darkBg ? 'text-white' : 'text-[#1a1a1a] group-hover:text-white';
+const GradientButton = ({ href, children, onClick, className = '' }) => {
   const Component = href ? 'a' : 'button';
   
   return (
     <Component 
       href={href} 
       onClick={onClick}
-      className={`group relative inline-flex p-[1.5px] rounded-[4px] bg-gradient-to-r from-[#02ce6b] to-[#058ae5] shadow-sm hover:shadow-lg hover:shadow-[#058ae5]/20 transition-all duration-300 ease-out ${className}`}
+      className={`group inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-[4px] bg-gradient-to-r from-[#058ae5] to-[#02ce6b] text-white font-poppins font-bold text-[16px] md:text-[18px] shadow-sm hover:shadow-lg hover:shadow-[#058ae5]/30 hover:opacity-90 transition-all duration-300 ease-out ${className}`}
     >
-      <span className={`flex items-center justify-center gap-2 px-8 py-3.5 w-full h-full rounded-[3px] transition-all duration-300 ease-out font-poppins font-bold text-[16px] md:text-[18px] ${innerBgClass} ${textColorClass} group-hover:bg-transparent group-hover:text-white`}>
-        {children}
-      </span>
+      {children}
     </Component>
   );
 };
@@ -179,7 +175,7 @@ export default function App() {
             <div className="max-w-[1200px] mx-auto flex flex-col items-center text-center">
               
               <FadeInUp className="max-w-4xl flex flex-col items-center">
-                <h1 className="text-4xl md:text-5xl lg:text-[64px] font-poppins font-extrabold tracking-tight leading-[1.1] mb-6 text-[#1a1a1a]">
+                <h1 className="text-4xl md:text-5xl lg:text-[64px] font-poppins font-extrabold tracking-tight leading-[1.4] mb-6 text-[#1a1a1a]">
                   Data Analytics & Strategy for <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#340a54] via-[#058ae5] to-[#02ce6b]">Better Commercial Decisions</span>
                 </h1>
                 <p className="text-[18px] md:text-[22px] text-[#1a1a1a]/80 max-w-3xl mb-10 leading-relaxed font-barlow">
@@ -203,7 +199,7 @@ export default function App() {
                     >
                       <img src={bullet.img} className="w-full h-full object-cover opacity-60" alt="OSG Insight" />
                       <div className="absolute inset-0 bg-[#1a1a1a]/40 flex items-center justify-center px-8 sm:px-16">
-                        <p className="text-white text-[24px] md:text-[32px] lg:text-[38px] font-poppins font-bold text-center max-w-3xl leading-snug shadow-sm drop-shadow-md">
+                        <p className="text-white text-[24px] md:text-[32px] lg:text-[38px] font-poppins font-bold text-center max-w-3xl leading-[1.5] shadow-sm drop-shadow-md">
                           {bullet.text}
                         </p>
                       </div>
@@ -248,7 +244,7 @@ export default function App() {
               
               <FadeInUp className="flex flex-col md:flex-row justify-between items-start md:items-end w-full mb-16 gap-6">
                 <div className="max-w-2xl text-left">
-                  <h2 className="text-3xl md:text-4xl lg:text-[42px] font-poppins font-bold tracking-tight mb-4 text-[#1a1a1a]">
+                  <h2 className="text-3xl md:text-4xl lg:text-[42px] font-poppins font-bold tracking-tight leading-[1.5] mb-6 text-[#1a1a1a]">
                     Built for Complex, <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] to-[#02ce6b]">Data-Rich Industries</span>
                   </h2>
                   <p className="text-[18px] md:text-[20px] text-[#1a1a1a]/70 font-barlow leading-relaxed">
@@ -291,7 +287,7 @@ export default function App() {
                         </div>
                       </div>
                       <div className="p-8 flex-1 flex flex-col bg-white z-20">
-                        <h3 className="text-[24px] md:text-[26px] font-poppins font-bold mb-4 text-[#1a1a1a]">{item.title}</h3>
+                        <h3 className="text-[24px] md:text-[26px] font-poppins font-bold leading-[1.5] mb-4 text-[#1a1a1a]">{item.title}</h3>
                         <p className="text-[16px] md:text-[18px] text-[#1a1a1a]/70 leading-relaxed font-barlow">{item.desc}</p>
                       </div>
                     </div>
@@ -309,7 +305,7 @@ export default function App() {
             <div className="max-w-[1200px] mx-auto flex flex-col items-center">
               
               <FadeInUp className="mb-16 text-center max-w-3xl mx-auto">
-                <h2 className="text-3xl md:text-4xl lg:text-[42px] font-poppins font-bold tracking-tight mb-6 text-[#1a1a1a]">
+                <h2 className="text-3xl md:text-4xl lg:text-[42px] font-poppins font-bold tracking-tight leading-[1.5] mb-6 text-[#1a1a1a]">
                   Analytics and Strategy Services That Support Real Decisions
                 </h2>
                 <p className="text-[18px] md:text-[20px] text-[#1a1a1a]/70 font-barlow mb-8 leading-relaxed">
@@ -337,7 +333,7 @@ export default function App() {
                         </div>
                       </div>
 
-                      <h3 className="text-[22px] md:text-[24px] font-poppins font-bold mb-4 text-[#1a1a1a] group-hover:text-[#058ae5] transition-colors duration-300">{item.title}</h3>
+                      <h3 className="text-[22px] md:text-[24px] font-poppins font-bold leading-[1.5] mb-4 text-[#1a1a1a] group-hover:text-[#058ae5] transition-colors duration-300">{item.title}</h3>
                       <p className="text-[16px] md:text-[18px] text-[#1a1a1a]/70 font-barlow leading-relaxed">{item.desc}</p>
                     </div>
                   </FadeInUp>
@@ -360,7 +356,7 @@ export default function App() {
             <div className="max-w-[1200px] mx-auto">
               
               <FadeInUp className="mb-16 max-w-2xl">
-                <h2 className="text-3xl md:text-4xl lg:text-[42px] font-poppins font-bold tracking-tight mb-6 text-[#1a1a1a]">
+                <h2 className="text-3xl md:text-4xl lg:text-[42px] font-poppins font-bold tracking-tight leading-[1.5] mb-8 text-[#1a1a1a]">
                   Why Leadership Teams Choose OSG
                 </h2>
                 <p className="text-[18px] md:text-[20px] text-[#1a1a1a]/70 font-barlow leading-relaxed">
@@ -372,7 +368,14 @@ export default function App() {
                 <FadeInUp className="md:col-span-2 bg-white rounded-[16px] p-10 border border-[#e5e5e8] shadow-sm relative overflow-hidden group hover:shadow-md transition-shadow duration-300">
                   <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#340a54] to-[#058ae5]" />
                   <div className="relative z-10">
-                    <h3 className="text-[24px] md:text-[28px] font-poppins font-bold mb-4 text-[#340a54] group-hover:text-[#058ae5] transition-colors duration-300">Decision-Focused Analytics</h3>
+                    <h3 className="text-[24px] md:text-[28px] font-poppins font-bold leading-[1.5] mb-4 relative group/heading">
+                      <span className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] to-[#02ce6b] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out pointer-events-none aria-hidden">
+                        Decision-Focused Analytics
+                      </span>
+                      <span className="relative text-[#340a54] group-hover:opacity-0 transition-opacity duration-500 ease-out">
+                        Decision-Focused Analytics
+                      </span>
+                    </h3>
                     <p className="text-[18px] md:text-[20px] text-[#1a1a1a]/70 font-barlow leading-relaxed max-w-2xl">
                       Every engagement starts with the decisions you need to make, then works backwards to the analytics required to support them.
                     </p>
@@ -385,7 +388,14 @@ export default function App() {
                 <FadeInUp delay="100ms" className="col-span-1 bg-white rounded-[16px] p-8 border border-[#e5e5e8] shadow-sm hover:shadow-md transition-shadow duration-300 relative overflow-hidden group">
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#058ae5] to-[#02ce6b]" />
                   <div className="relative z-10">
-                    <h3 className="text-[22px] md:text-[24px] font-poppins font-bold mb-4 text-[#1a1a1a] group-hover:text-[#058ae5] transition-colors duration-300">Industry Depth</h3>
+                    <h3 className="text-[22px] md:text-[24px] font-poppins font-bold leading-[1.5] mb-4 relative group/heading">
+                      <span className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] to-[#02ce6b] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out pointer-events-none aria-hidden">
+                        Industry Depth
+                      </span>
+                      <span className="relative text-[#1a1a1a] group-hover:opacity-0 transition-opacity duration-500 ease-out">
+                        Industry Depth
+                      </span>
+                    </h3>
                     <p className="text-[16px] md:text-[18px] text-[#1a1a1a]/70 font-barlow leading-relaxed">OSG works in industries where stakeholder dynamics, regulation, and data complexity make decisions harder, not simpler.</p>
                   </div>
                   <div className="absolute right-0 bottom-0 opacity-5 w-48 h-48 transform translate-x-1/4 translate-y-1/4 group-hover:scale-110 transition-transform duration-700 ease-out pointer-events-none">
@@ -396,7 +406,14 @@ export default function App() {
                 <FadeInUp delay="200ms" className="col-span-1 bg-white rounded-[16px] p-8 border border-[#e5e5e8] shadow-sm hover:shadow-md transition-shadow duration-300 relative overflow-hidden group">
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#058ae5] to-[#02ce6b]" />
                   <div className="relative z-10">
-                    <h3 className="text-[22px] md:text-[24px] font-poppins font-bold mb-4 text-[#1a1a1a] group-hover:text-[#058ae5] transition-colors duration-300">Proprietary Methods + Practical Delivery</h3>
+                    <h3 className="text-[22px] md:text-[24px] font-poppins font-bold leading-[1.5] mb-4 relative group/heading">
+                      <span className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] to-[#02ce6b] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out pointer-events-none aria-hidden">
+                        Proprietary Methods + Practical Delivery
+                      </span>
+                      <span className="relative text-[#1a1a1a] group-hover:opacity-0 transition-opacity duration-500 ease-out">
+                        Proprietary Methods + Practical Delivery
+                      </span>
+                    </h3>
                     <p className="text-[16px] md:text-[18px] text-[#1a1a1a]/70 font-barlow leading-relaxed">OSG’s proprietary approaches and platforms are translated into clear recommendations, not left as technical detail.</p>
                   </div>
                   <div className="absolute right-0 bottom-0 opacity-5 w-48 h-48 transform translate-x-1/4 translate-y-1/4 group-hover:scale-110 transition-transform duration-700 ease-out pointer-events-none">
@@ -408,7 +425,14 @@ export default function App() {
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#058ae5] to-[#02ce6b]" />
                   <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center gap-8">
                     <div>
-                      <h3 className="text-[24px] md:text-[28px] font-poppins font-bold mb-4 text-[#1a1a1a] group-hover:text-[#058ae5] transition-colors duration-300">Secure, Enterprise-Ready Approach</h3>
+                      <h3 className="text-[24px] md:text-[28px] font-poppins font-bold leading-[1.5] mb-4 relative group/heading">
+                        <span className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] to-[#02ce6b] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out pointer-events-none aria-hidden">
+                          Secure, Enterprise-Ready Approach
+                        </span>
+                        <span className="relative text-[#1a1a1a] group-hover:opacity-0 transition-opacity duration-500 ease-out">
+                          Secure, Enterprise-Ready Approach
+                        </span>
+                      </h3>
                       <p className="text-[18px] md:text-[20px] text-[#1a1a1a]/70 font-barlow leading-relaxed max-w-2xl">
                         Our workflows are designed for sensitive commercial, clinical, and patient-related data, with security and compliance as a core expectation.
                       </p>
@@ -441,7 +465,8 @@ export default function App() {
               
               <FadeInUp className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
                 <div className="max-w-2xl text-left">
-                  <h2 className="text-3xl md:text-4xl lg:text-[42px] font-poppins font-bold tracking-tight mb-6 text-[#1a1a1a]">
+                  <span className="inline-block px-4 py-1.5 bg-[#058ae5]/10 text-[#058ae5] text-[14px] md:text-[15px] font-bold uppercase tracking-widest rounded-full mb-4">Case Studies</span>
+                  <h2 className="text-3xl md:text-4xl lg:text-[42px] font-poppins font-bold tracking-tight leading-[1.5] mb-6 text-[#1a1a1a]">
                     Case Studies
                   </h2>
                   <p className="text-[18px] md:text-[20px] text-[#1a1a1a]/70 font-barlow leading-relaxed">
@@ -487,7 +512,8 @@ export default function App() {
                         {item.icon}
                       </div>
                       
-                      <h3 className="text-[22px] md:text-[24px] font-poppins font-bold text-[#1a1a1a] mb-6 leading-tight group-hover:text-[#058ae5] transition-colors duration-300">{item.client}</h3>
+                      {/* Permanent Gradient Text for Case Study Titles */}
+                      <h3 className="text-[22px] md:text-[24px] font-poppins font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] to-[#02ce6b] mb-6 leading-[1.5]">{item.client}</h3>
                       
                       <div className="text-[16px] md:text-[17px] text-[#1a1a1a]/80 font-barlow space-y-5 mb-10 flex-1">
                         <p><strong className="font-semibold text-[#1a1a1a] uppercase text-[14px] md:text-[15px] tracking-widest block mb-1">Challenge:</strong> <span className="leading-relaxed block">{item.challenge}</span></p>
@@ -516,7 +542,7 @@ export default function App() {
                 
                 <div className="lg:sticky lg:top-32 max-w-xl self-start">
                   <FadeInUp>
-                    <h2 className="text-3xl md:text-4xl lg:text-[42px] font-poppins font-bold tracking-tight mb-6 text-[#1a1a1a] leading-tight">
+                    <h2 className="text-3xl md:text-4xl lg:text-[42px] font-poppins font-bold tracking-tight leading-[1.5] mb-6 text-[#1a1a1a]">
                       A Clear Path from Data to <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] to-[#02ce6b]">Decision</span>
                     </h2>
                     <p className="text-[18px] md:text-[22px] text-[#1a1a1a]/70 font-barlow leading-relaxed">
@@ -542,7 +568,7 @@ export default function App() {
                       </div>
                       
                       <div className="bg-white border border-[#e5e5e8] rounded-xl p-8 md:p-10 hover:shadow-md transition-shadow duration-300 ml-2 md:ml-4">
-                        <h3 className="text-[20px] md:text-[24px] font-poppins font-bold mb-4 text-[#1a1a1a] group-hover:text-[#058ae5] transition-colors duration-300">{step.title}</h3>
+                        <h3 className="text-[20px] md:text-[24px] font-poppins font-bold leading-[1.5] mb-4 text-[#1a1a1a] group-hover:text-[#058ae5] transition-colors duration-300">{step.title}</h3>
                         <p className="text-[16px] md:text-[18px] text-[#1a1a1a]/70 font-barlow leading-relaxed">{step.desc}</p>
                       </div>
                     </FadeInUp>
@@ -561,7 +587,7 @@ export default function App() {
             <div className="max-w-[1200px] mx-auto">
               
               <FadeInUp className="mb-12 flex flex-col items-start w-full">
-                <h2 className="text-3xl md:text-4xl lg:text-[42px] font-poppins font-bold tracking-tight mb-6 text-[#1a1a1a]">
+                <h2 className="text-3xl md:text-4xl lg:text-[42px] font-poppins font-bold tracking-tight leading-[1.5] mb-6 text-[#1a1a1a]">
                   Insights for Analytics and Strategy Leaders
                 </h2>
                 <p className="text-[18px] md:text-[20px] text-[#1a1a1a]/70 font-barlow mb-12 max-w-2xl leading-relaxed">
@@ -574,7 +600,7 @@ export default function App() {
                       <button 
                         key={tab}
                         onClick={() => setActiveFilter(tab)}
-                        className={`px-6 py-2.5 rounded-[4px] text-[16px] md:text-[17px] font-semibold transition-all duration-300 ease-out ${activeFilter === tab ? 'bg-gradient-to-r from-[#340a54] to-[#058ae5] text-white shadow-md border-transparent' : 'bg-white text-[#1a1a1a]/70 border border-[#e5e5e8] hover:border-[#058ae5] hover:text-[#058ae5]'}`}
+                        className={`px-6 py-2.5 rounded-[4px] text-[16px] md:text-[17px] font-semibold transition-all duration-300 ease-out ${activeFilter === tab ? 'bg-gradient-to-r from-[#058ae5] to-[#02ce6b] text-white shadow-md border-transparent' : 'bg-white text-[#1a1a1a]/70 border border-[#e5e5e8] hover:border-[#058ae5] hover:text-[#058ae5]'}`}
                       >
                         {tab}
                       </button>
@@ -603,13 +629,22 @@ export default function App() {
                   <FadeInUp key={i} delay={`${i * 100}ms`}>
                     <div className="bg-white rounded-[16px] overflow-hidden border border-[#e5e5e8] shadow-sm hover:shadow-lg transition-all duration-300 ease-out h-full flex flex-col group cursor-pointer">
                       <div className="h-[240px] w-full overflow-hidden relative">
-                        {/* Branded Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-tr from-[#340a54]/40 to-[#058ae5]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 mix-blend-multiply" />
+                        <div className="absolute inset-0 bg-[#340a54]/10 group-hover:bg-transparent transition-colors z-10" />
                         <img src={article.img} alt={article.title} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out" />
                       </div>
                       <div className="p-8 flex-1 flex flex-col">
                         <span className="text-[14px] md:text-[15px] font-bold text-[#058ae5] uppercase tracking-widest mb-4 block">{article.tag}</span>
-                        <h3 className="text-[22px] md:text-[26px] font-poppins font-bold mb-4 text-[#1a1a1a] group-hover:text-[#058ae5] transition-colors duration-300 leading-snug">{article.title}</h3>
+                        
+                        {/* CSS Trick: Smooth transition from solid to gradient text */}
+                        <h3 className="text-[22px] md:text-[26px] font-poppins font-bold mb-4 relative group leading-[1.5]">
+                          <span className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] to-[#02ce6b] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out pointer-events-none aria-hidden">
+                            {article.title}
+                          </span>
+                          <span className="relative text-[#1a1a1a] group-hover:opacity-0 transition-opacity duration-500 ease-out">
+                            {article.title}
+                          </span>
+                        </h3>
+
                         <p className="text-[16px] md:text-[18px] text-[#1a1a1a]/70 font-barlow flex-1 mb-8 leading-relaxed">{article.desc}</p>
                         <div className="text-[16px] md:text-[18px] font-bold text-[#340a54] flex items-center gap-2 uppercase tracking-wider group-hover:text-[#058ae5] transition-colors duration-300">
                           Read Article <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform duration-300 ease-out"/>
@@ -634,8 +669,8 @@ export default function App() {
         <section id="about" className="py-20 md:py-28 bg-[#f8f9fa]">
           <div className="px-5 md:px-10 lg:px-20 w-full">
             <FadeInUp className="max-w-4xl mx-auto text-center flex flex-col items-center">
-              <h2 className="text-3xl md:text-4xl lg:text-[42px] font-poppins font-bold tracking-tight mb-8 text-[#1a1a1a]">
-                About <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#340a54] to-[#058ae5]">OSG</span>
+              <h2 className="text-3xl md:text-4xl lg:text-[42px] font-poppins font-bold tracking-tight leading-[1.5] mb-8 text-[#1a1a1a]">
+                About <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] to-[#02ce6b]">OSG</span>
               </h2>
               <p className="text-[18px] md:text-[22px] text-[#1a1a1a]/80 font-barlow leading-relaxed mb-12">
                 OSG is a Data Analytics & Strategy partner focused on helping leadership teams in pharma, medtech, and healthcare make better commercial and customer decisions. The firm brings together analytics, research, and strategic thinking to support the kind of complex choices that cannot be made on instinct alone.
@@ -654,20 +689,19 @@ export default function App() {
 
       {/* SECTION 9: FINAL CTA BAND */}
       <footer id="contact" className="bg-[#340a54] text-white py-24 relative overflow-hidden">
-        {/* Double Brand Glow Effect */}
-        <div className="absolute top-[-10%] right-[-10%] w-full max-w-[800px] h-[800px] bg-gradient-to-bl from-[#058ae5]/30 to-transparent rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute top-0 right-0 w-full max-w-[800px] h-[800px] bg-gradient-to-bl from-[#058ae5]/30 to-transparent rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute bottom-[-10%] left-[-5%] w-full max-w-[600px] h-[600px] bg-gradient-to-tr from-[#02ce6b]/20 to-transparent rounded-full blur-[100px] pointer-events-none" />
         
         <div className="px-5 md:px-10 lg:px-20 w-full relative z-10">
           <div className="max-w-[1200px] mx-auto flex flex-col items-center text-center">
             
             <FadeInUp>
-              <h2 className="text-3xl md:text-4xl lg:text-[48px] font-poppins font-bold tracking-tight max-w-3xl leading-tight mb-12">
+              <h2 className="text-3xl md:text-4xl lg:text-[48px] font-poppins font-bold tracking-tight max-w-3xl leading-[1.5] mb-12">
                 Need an analytics and strategy partner for a high-stakes commercial decision?
               </h2>
               
               <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-                <GradientButton href="#contact" darkBg={true}>
+                <GradientButton href="#contact">
                   Request a Capabilities Overview
                 </GradientButton>
               </div>
