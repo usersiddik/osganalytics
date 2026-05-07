@@ -16,7 +16,10 @@ import {
   Database,
   Menu,
   X,
-  Search
+  Search,
+  Globe,
+  Users,
+  Clock
 } from 'lucide-react';
 
 // --- FONTS & CSS INJECTION ---
@@ -71,7 +74,8 @@ const GradientButton = ({ href, children, darkBg = false, onClick, className = '
     <Component 
       href={href} 
       onClick={onClick}
-      className={`group inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-[4px] bg-gradient-to-r from-[#058ae5] to-[#02ce6b] text-white font-poppins font-bold text-[16px] md:text-[18px] shadow-sm hover:shadow-lg hover:shadow-[#058ae5]/30 hover:opacity-90 transition-all duration-300 ease-out ${className}`}
+      // Added from-[50%] to push the blue dominance
+      className={`group inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-[4px] bg-gradient-to-r from-[#058ae5] from-[50%] to-[#02ce6b] text-white font-poppins font-bold text-[16px] md:text-[18px] shadow-sm hover:shadow-lg hover:shadow-[#058ae5]/30 hover:opacity-90 transition-all duration-300 ease-out ${className}`}
     >
       {children}
     </Component>
@@ -169,15 +173,15 @@ export default function App() {
         <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden bg-white border-b border-[#e5e5e8]">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1200px] h-[600px] bg-gradient-to-b from-[#058ae5]/5 to-transparent pointer-events-none" />
           <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-gradient-to-br from-[#340a54]/15 to-[#058ae5]/15 rounded-full blur-[100px] pointer-events-none" />
-          <div className="absolute top-[20%] left-[-10%] w-[400px] h-[400px] bg-gradient-to-tr from-[#02ce6b]/10 to-[#058ae5]/10 rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute top-[20%] left-[-10%] w-[400px] h-[400px] bg-gradient-to-tr from-[#058ae5]/10 to-[#02ce6b]/10 rounded-full blur-[100px] pointer-events-none" />
 
           <div className="px-5 md:px-10 lg:px-20 relative z-10 w-full">
             <div className="max-w-[1200px] mx-auto flex flex-col items-center text-center">
               
               <FadeInUp className="max-w-4xl flex flex-col items-center">
-                {/* Hero H1 - Adjusted line height to 1.2 */}
                 <h1 className="text-4xl md:text-5xl lg:text-[64px] font-poppins font-extrabold tracking-tight leading-[1.2] md:leading-[1.2] lg:leading-[1.2] mb-6 text-[#1a1a1a]">
-                  Data Analytics & Strategy for <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#340a54] via-[#058ae5] to-[#02ce6b]">Better Commercial Decisions</span>
+                  {/* Added via-[60%] to push blue further right on the 3-color gradient */}
+                  Data Analytics & Strategy for <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#340a54] via-[#058ae5] via-[60%] to-[#02ce6b]">Better Commercial Decisions</span>
                 </h1>
                 <p className="text-[18px] md:text-[22px] text-[#1a1a1a]/80 max-w-3xl mb-10 leading-relaxed font-barlow">
                   OSG helps pharma, medtech, and healthcare leaders turn fragmented customer, market, and real-world data into clear decisions on growth, customer strategy, product positioning, and experience improvement.
@@ -200,7 +204,6 @@ export default function App() {
                     >
                       <img src={bullet.img} className="w-full h-full object-cover opacity-60" alt="OSG Insight" />
                       <div className="absolute inset-0 bg-[#1a1a1a]/40 flex items-center justify-center px-8 sm:px-16">
-                        {/* H3/Slider Title - Tightened to 1.3 */}
                         <p className="text-white text-[24px] md:text-[32px] lg:text-[38px] font-poppins font-bold text-center max-w-3xl leading-[1.3] md:leading-[1.3] lg:leading-[1.3] shadow-sm drop-shadow-md">
                           {bullet.text}
                         </p>
@@ -225,14 +228,10 @@ export default function App() {
               {/* Trust Strip */}
               <FadeInUp delay="400ms" className="w-full border-t border-[#e5e5e8] pt-8 flex flex-wrap justify-center gap-4 md:gap-8 text-[16px] md:text-[18px] font-semibold text-[#1a1a1a]/70 uppercase tracking-widest">
                 <span>Pharma</span>
-                <span className="hidden md:inline text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] to-[#02ce6b] font-black">•</span>
+                <span className="hidden md:inline text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] from-[50%] to-[#02ce6b] font-black">•</span>
                 <span>MedTech</span>
-                <span className="hidden md:inline text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] to-[#02ce6b] font-black">•</span>
+                <span className="hidden md:inline text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] from-[50%] to-[#02ce6b] font-black">•</span>
                 <span>Healthcare</span>
-                <span className="hidden lg:inline text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] to-[#02ce6b] font-black">•</span>
-                <span>Secure Data Workflows</span>
-                <span className="hidden lg:inline text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] to-[#02ce6b] font-black">•</span>
-                <span>Analytics + Strategy</span>
               </FadeInUp>
 
             </div>
@@ -246,9 +245,8 @@ export default function App() {
               
               <FadeInUp className="flex flex-col md:flex-row justify-between items-start md:items-end w-full mb-16 gap-6">
                 <div className="max-w-2xl text-left">
-                  {/* H2 Title - Fixed to specific explicit REM values (3rem for tablet) */}
                   <h2 className="text-3xl md:text-4xl lg:text-[42px] font-poppins font-bold tracking-tight leading-[2.5rem] md:leading-[3rem] lg:leading-[3.5rem] mb-4 text-[#1a1a1a]">
-                    Built for Complex, <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] to-[#02ce6b]">Data-Rich Industries</span>
+                    Built for Complex, <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] from-[50%] to-[#02ce6b]">Data-Rich Industries</span>
                   </h2>
                   <p className="text-[18px] md:text-[20px] text-[#1a1a1a]/70 font-barlow leading-relaxed">
                     OSG works where commercial decisions are high-stakes, data is fragmented, and leadership teams need clear strategic direction.
@@ -283,14 +281,13 @@ export default function App() {
                   <FadeInUp key={i} delay={`${i * 100}ms`}>
                     <div className="group relative bg-white rounded-[16px] overflow-hidden border border-[#e5e5e8] shadow-sm hover:shadow-xl transition-all duration-300 ease-out h-full flex flex-col hover:-translate-y-1">
                       <div className="h-[200px] w-full relative overflow-hidden">
-                        <div className="absolute inset-0 bg-gradient-to-br from-[#058ae5]/80 to-[#02ce6b]/80 mix-blend-multiply z-10 transition-opacity duration-300 group-hover:opacity-90" />
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#058ae5]/80 from-[50%] to-[#02ce6b]/80 opacity-70 mix-blend-multiply z-10 transition-opacity duration-300 group-hover:opacity-90" />
                         <img src={item.img} alt={item.title} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out" />
                         <div className="absolute top-6 left-6 z-20">
                           {item.icon}
                         </div>
                       </div>
                       <div className="p-8 flex-1 flex flex-col bg-white z-20">
-                        {/* H3 Title - Tightened to 1.3 */}
                         <h3 className="text-[24px] md:text-[26px] font-poppins font-bold leading-[1.3] md:leading-[1.3] lg:leading-[1.3] mb-4 text-[#1a1a1a]">{item.title}</h3>
                         <p className="text-[16px] md:text-[18px] text-[#1a1a1a]/70 leading-relaxed font-barlow">{item.desc}</p>
                       </div>
@@ -329,9 +326,8 @@ export default function App() {
                   <FadeInUp key={i} delay={`${i * 50}ms`}>
                     <div className="p-10 border-b border-r border-[#e5e5e8] hover:bg-[#f8f9fa] transition-colors duration-300 h-full flex flex-col items-start group">
                       
-                      {/* CSS-Optimized Gradient Overlay Icon Container */}
                       <div className="w-16 h-16 bg-white border border-[#e5e5e8] rounded-lg flex items-center justify-center mb-6 relative overflow-hidden shadow-sm transition-all duration-300 group-hover:border-transparent group-hover:shadow-md">
-                        <div className="absolute inset-0 bg-gradient-to-br from-[#058ae5] to-[#02ce6b] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#058ae5] from-[50%] to-[#02ce6b] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         <div className="relative z-10 flex items-center justify-center w-full h-full">
                           {React.cloneElement(item.icon, { className: "w-8 h-8 text-[#058ae5] group-hover:text-white transition-colors duration-300" })}
                         </div>
@@ -344,10 +340,17 @@ export default function App() {
                 ))}
               </div>
 
-              <FadeInUp delay="200ms" className="mt-14 text-center">
+              <FadeInUp delay="150ms" className="mt-14 text-center">
                 <GradientButton href="#services">
                   View Full Capabilities
                 </GradientButton>
+              </FadeInUp>
+
+              {/* Added Capabilities Highlights from Hero Trust Strip */}
+              <FadeInUp delay="200ms" className="w-full border-t border-[#e5e5e8] pt-8 mt-12 flex flex-wrap justify-center gap-4 md:gap-8 text-[16px] md:text-[18px] font-semibold text-[#1a1a1a]/70 uppercase tracking-widest">
+                <span>Secure Data Workflows</span>
+                <span className="hidden md:inline text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] from-[50%] to-[#02ce6b] font-black">•</span>
+                <span>Analytics + Strategy</span>
               </FadeInUp>
 
             </div>
@@ -373,7 +376,7 @@ export default function App() {
                   <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#340a54] to-[#058ae5]" />
                   <div className="relative z-10">
                     <h3 className="text-[24px] md:text-[28px] font-poppins font-bold leading-[1.3] md:leading-[1.3] lg:leading-[1.3] mb-4 relative group/heading">
-                      <span className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] to-[#02ce6b] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out pointer-events-none aria-hidden">
+                      <span className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] from-[50%] to-[#02ce6b] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out pointer-events-none aria-hidden">
                         Decision-Focused Analytics
                       </span>
                       <span className="relative text-[#340a54] group-hover:opacity-0 transition-opacity duration-500 ease-out">
@@ -393,7 +396,7 @@ export default function App() {
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#058ae5] to-[#02ce6b]" />
                   <div className="relative z-10">
                     <h3 className="text-[22px] md:text-[24px] font-poppins font-bold leading-[1.3] md:leading-[1.3] lg:leading-[1.3] mb-4 relative group/heading">
-                      <span className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] to-[#02ce6b] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out pointer-events-none aria-hidden">
+                      <span className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] from-[50%] to-[#02ce6b] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out pointer-events-none aria-hidden">
                         Industry Depth
                       </span>
                       <span className="relative text-[#1a1a1a] group-hover:opacity-0 transition-opacity duration-500 ease-out">
@@ -411,7 +414,7 @@ export default function App() {
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#058ae5] to-[#02ce6b]" />
                   <div className="relative z-10">
                     <h3 className="text-[22px] md:text-[24px] font-poppins font-bold leading-[1.3] md:leading-[1.3] lg:leading-[1.3] mb-4 relative group/heading">
-                      <span className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] to-[#02ce6b] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out pointer-events-none aria-hidden">
+                      <span className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] from-[50%] to-[#02ce6b] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out pointer-events-none aria-hidden">
                         Proprietary Methods + Practical Delivery
                       </span>
                       <span className="relative text-[#1a1a1a] group-hover:opacity-0 transition-opacity duration-500 ease-out">
@@ -430,7 +433,7 @@ export default function App() {
                   <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center gap-8">
                     <div>
                       <h3 className="text-[24px] md:text-[28px] font-poppins font-bold leading-[1.3] md:leading-[1.3] lg:leading-[1.3] mb-4 relative group/heading">
-                        <span className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] to-[#02ce6b] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out pointer-events-none aria-hidden">
+                        <span className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] from-[50%] to-[#02ce6b] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out pointer-events-none aria-hidden">
                           Secure, Enterprise-Ready Approach
                         </span>
                         <span className="relative text-[#1a1a1a] group-hover:opacity-0 transition-opacity duration-500 ease-out">
@@ -516,7 +519,7 @@ export default function App() {
                       </div>
                       
                       {/* Permanent Gradient Text for Case Study Titles */}
-                      <h3 className="text-[22px] md:text-[24px] font-poppins font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] to-[#02ce6b] mb-6 leading-[1.3] md:leading-[1.3] lg:leading-[1.3]">{item.client}</h3>
+                      <h3 className="text-[22px] md:text-[24px] font-poppins font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] from-[50%] to-[#02ce6b] mb-6 leading-[1.3] md:leading-[1.3] lg:leading-[1.3]">{item.client}</h3>
                       
                       <div className="text-[16px] md:text-[17px] text-[#1a1a1a]/80 font-barlow space-y-5 mb-10 flex-1">
                         <p><strong className="font-semibold text-[#1a1a1a] uppercase text-[14px] md:text-[15px] tracking-widest block mb-1">Challenge:</strong> <span className="leading-relaxed block">{item.challenge}</span></p>
@@ -546,7 +549,7 @@ export default function App() {
                 <div className="lg:sticky lg:top-32 max-w-xl self-start">
                   <FadeInUp>
                     <h2 className="text-3xl md:text-4xl lg:text-[42px] font-poppins font-bold tracking-tight leading-[2.5rem] md:leading-[3rem] lg:leading-[3.5rem] mb-6 text-[#1a1a1a]">
-                      A Clear Path from Data to <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] to-[#02ce6b]">Decision</span>
+                      A Clear Path from Data to <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] from-[50%] to-[#02ce6b]">Decision</span>
                     </h2>
                     <p className="text-[18px] md:text-[22px] text-[#1a1a1a]/70 font-barlow leading-relaxed">
                       OSG brings structure to complex questions so analytics lead to action, not just insight. We efficiently manage your data-insights-decision value chain to drive immediate impact.
@@ -555,7 +558,7 @@ export default function App() {
                 </div>
                 
                 <div className="relative pl-8 md:pl-12 space-y-10 py-4 ml-4 lg:ml-0">
-                  <div className="absolute left-[1px] top-10 bottom-10 w-[2px] bg-gradient-to-b from-[#058ae5] via-[#02ce6b] to-transparent"></div>
+                  <div className="absolute left-[1px] top-10 bottom-10 w-[2px] bg-gradient-to-b from-[#058ae5] from-[40%] via-[#02ce6b] via-[80%] to-transparent"></div>
 
                   {[
                     { num: '1', title: 'Clarify the business question', desc: 'Align with leadership on the decisions that need to be made and the outcomes that matter.' },
@@ -564,7 +567,7 @@ export default function App() {
                   ].map((step, i) => (
                     <FadeInUp key={i} delay={`${i * 150}ms`} className="relative group">
                       {/* Gradient Border Number Node */}
-                      <div className="absolute left-[-32px] md:left-[-48px] -translate-x-1/2 top-4 w-12 h-12 md:w-14 md:h-14 p-[2px] rounded-full bg-gradient-to-br from-[#058ae5] to-[#02ce6b] shadow-sm z-10 group-hover:scale-110 transition-transform duration-300 ease-out">
+                      <div className="absolute left-[-32px] md:left-[-48px] -translate-x-1/2 top-4 w-12 h-12 md:w-14 md:h-14 p-[2px] rounded-full bg-gradient-to-br from-[#058ae5] from-[50%] to-[#02ce6b] shadow-sm z-10 group-hover:scale-110 transition-transform duration-300 ease-out">
                         <div className="w-full h-full bg-white rounded-full flex items-center justify-center font-poppins font-bold text-[20px] md:text-[24px] text-[#340a54] transition-colors duration-300 group-hover:text-[#058ae5]">
                           {step.num}
                         </div>
@@ -603,7 +606,7 @@ export default function App() {
                       <button 
                         key={tab}
                         onClick={() => setActiveFilter(tab)}
-                        className={`px-6 py-2.5 rounded-[4px] text-[16px] md:text-[17px] font-semibold transition-all duration-300 ease-out ${activeFilter === tab ? 'bg-gradient-to-r from-[#058ae5] to-[#02ce6b] text-white shadow-md border-transparent' : 'bg-white text-[#1a1a1a]/70 border border-[#e5e5e8] hover:border-[#058ae5] hover:text-[#058ae5]'}`}
+                        className={`px-6 py-2.5 rounded-[4px] text-[16px] md:text-[17px] font-semibold transition-all duration-300 ease-out ${activeFilter === tab ? 'bg-gradient-to-r from-[#058ae5] from-[50%] to-[#02ce6b] text-white shadow-md border-transparent' : 'bg-white text-[#1a1a1a]/70 border border-[#e5e5e8] hover:border-[#058ae5] hover:text-[#058ae5]'}`}
                       >
                         {tab}
                       </button>
@@ -632,7 +635,7 @@ export default function App() {
                   <FadeInUp key={i} delay={`${i * 100}ms`}>
                     <div className="bg-white rounded-[16px] overflow-hidden border border-[#e5e5e8] shadow-sm hover:shadow-lg transition-all duration-300 ease-out h-full flex flex-col group cursor-pointer">
                       <div className="h-[240px] w-full overflow-hidden relative">
-                        <div className="absolute inset-0 bg-[#340a54]/10 group-hover:bg-transparent transition-colors z-10" />
+                        <div className="absolute inset-0 bg-gradient-to-tr from-[#340a54]/40 to-[#058ae5]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 mix-blend-multiply" />
                         <img src={article.img} alt={article.title} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out" />
                       </div>
                       <div className="p-8 flex-1 flex flex-col">
@@ -640,7 +643,7 @@ export default function App() {
                         
                         {/* CSS Trick: Smooth transition from solid to gradient text */}
                         <h3 className="text-[22px] md:text-[26px] font-poppins font-bold mb-4 relative group leading-[1.3] md:leading-[1.3] lg:leading-[1.3]">
-                          <span className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] to-[#02ce6b] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out pointer-events-none aria-hidden">
+                          <span className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] from-[50%] to-[#02ce6b] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out pointer-events-none aria-hidden">
                             {article.title}
                           </span>
                           <span className="relative text-[#1a1a1a] group-hover:opacity-0 transition-opacity duration-500 ease-out">
@@ -671,20 +674,50 @@ export default function App() {
         {/* SECTION 8: ABOUT */}
         <section id="about" className="py-20 md:py-28 bg-[#f8f9fa]">
           <div className="px-5 md:px-10 lg:px-20 w-full">
-            <FadeInUp className="max-w-4xl mx-auto text-center flex flex-col items-center">
-              <h2 className="text-3xl md:text-4xl lg:text-[42px] font-poppins font-bold tracking-tight leading-[2.5rem] md:leading-[3rem] lg:leading-[3.5rem] mb-8 text-[#1a1a1a]">
-                About <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] to-[#02ce6b]">OSG</span>
-              </h2>
-              <p className="text-[18px] md:text-[22px] text-[#1a1a1a]/80 font-barlow leading-relaxed mb-12">
-                OSG is a Data Analytics & Strategy partner focused on helping leadership teams in pharma, medtech, and healthcare make better commercial and customer decisions. The firm brings together analytics, research, and strategic thinking to support the kind of complex choices that cannot be made on instinct alone.
-              </p>
-              
-              <ul className="flex flex-col md:flex-row flex-wrap justify-center gap-x-12 gap-y-6 text-[18px] md:text-[20px] font-medium text-[#1a1a1a] text-left md:text-center">
-                <li className="flex items-center justify-center gap-3"><CheckCircle2 className="w-6 h-6 text-[#02ce6b]"/> Experience across global and regional organizations</li>
-                <li className="flex items-center justify-center gap-3"><CheckCircle2 className="w-6 h-6 text-[#058ae5]"/> Multidisciplinary teams spanning analytics, research, and strategy</li>
-                <li className="flex items-center justify-center gap-3"><CheckCircle2 className="w-6 h-6 text-[#340a54]"/> Engagement models tailored to specific decisions and timelines</li>
-              </ul>
-            </FadeInUp>
+            <div className="max-w-[1200px] mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                
+                {/* Left Side: Title & Description */}
+                <FadeInUp className="text-left">
+                  <h2 className="text-3xl md:text-4xl lg:text-[42px] font-poppins font-bold tracking-tight leading-[2.5rem] md:leading-[3rem] lg:leading-[3.5rem] mb-6 text-[#1a1a1a]">
+                    About <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#058ae5] from-[50%] to-[#02ce6b]">OSG</span>
+                  </h2>
+                  <p className="text-[18px] md:text-[20px] text-[#1a1a1a]/80 font-barlow leading-relaxed">
+                    OSG is a Data Analytics & Strategy partner focused on helping leadership teams in pharma, medtech, and healthcare make better commercial and customer decisions. The firm brings together analytics, research, and strategic thinking to support the kind of complex choices that cannot be made on instinct alone.
+                  </p>
+                </FadeInUp>
+                
+                {/* Right Side: Feature Cards */}
+                <div className="flex flex-col gap-4 md:gap-5">
+                  {[
+                    { 
+                      icon: <Globe className="w-6 h-6 text-[#058ae5]" />, 
+                      text: "Experience across global and regional organizations" 
+                    },
+                    { 
+                      icon: <Users className="w-6 h-6 text-[#02ce6b]" />, 
+                      text: "Multidisciplinary teams spanning analytics, research, and strategy" 
+                    },
+                    { 
+                      icon: <Clock className="w-6 h-6 text-[#340a54]" />, 
+                      text: "Engagement models tailored to specific decisions and timelines" 
+                    }
+                  ].map((item, i) => (
+                    <FadeInUp key={i} delay={`${i * 100}ms`}>
+                      <div className="bg-white border border-[#e5e5e8] shadow-sm hover:shadow-md transition-shadow duration-300 rounded-[12px] p-6 flex items-center gap-5 md:gap-6 group">
+                        <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#058ae5]/10 to-[#02ce6b]/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300 ease-out">
+                          {item.icon}
+                        </div>
+                        <p className="text-[16px] md:text-[18px] font-medium text-[#1a1a1a] font-barlow leading-relaxed">
+                          {item.text}
+                        </p>
+                      </div>
+                    </FadeInUp>
+                  ))}
+                </div>
+
+              </div>
+            </div>
           </div>
         </section>
 
