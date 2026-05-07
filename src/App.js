@@ -472,6 +472,7 @@ export default function App() {
               
               <FadeInUp className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
                 <div className="max-w-2xl text-left">
+                  <span className="inline-block px-4 py-1.5 bg-[#058ae5]/10 text-[#058ae5] text-[14px] md:text-[15px] font-bold uppercase tracking-widest rounded-full mb-4">Case Studies</span>
                   <h2 className="text-3xl md:text-4xl lg:text-[42px] font-poppins font-bold tracking-tight leading-[2.5rem] md:leading-[3rem] lg:leading-[3.5rem] mb-6 text-[#1a1a1a]">
                     Case Studies
                   </h2>
@@ -675,7 +676,7 @@ export default function App() {
         <section id="about" className="py-20 md:py-28 bg-[#f8f9fa]">
           <div className="px-5 md:px-10 lg:px-20 w-full">
             <div className="max-w-[1200px] mx-auto">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
                 
                 {/* Left Side: Title & Description */}
                 <FadeInUp className="text-left">
